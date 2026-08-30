@@ -3,7 +3,7 @@
 #include <cstddef>
 #include <string>
 #include <memory>
-#include <netb.h>
+#include <netdb.h>
 #include <sys/socket.h>
 #include "own_memory_allocator_ready/memory.h"
 
@@ -22,6 +22,6 @@ public:
 private:
     int listeningPort;
     int listeningSocketFd;
-    std::addrinfo* addressList;
+    addrinfo* addressList;
     void setupListeningSocket();
 };
