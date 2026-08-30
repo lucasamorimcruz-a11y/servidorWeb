@@ -1,0 +1,6 @@
+
+
+int main() {
+    Server::start();
+
+}
