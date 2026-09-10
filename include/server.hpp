@@ -10,7 +10,7 @@
 
 class Server {
 public:
-    explicit Server(int listeningPort) noexcept;
+    explicit Server() noexcept;
 
     ~Server();
 

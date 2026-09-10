@@ -1,11 +1,7 @@
-#include "servidorWeb\src\server.h"
-
-Server::Server (int listeningPort)
+#include "include/server.hpp"
+#include "include/socket.hpp"
+Server::Server ()
 {
-
-}
-Server::start()
-{
-
+   
 }
 

@@ -1,6 +1,8 @@
-
+#include "server.hpp"
+#include "socket.hpp"
 
 int main() {
-    Server::start();
-
+    Server _server;
+    _server.start();
+   
 }
