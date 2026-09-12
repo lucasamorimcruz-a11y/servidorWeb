@@ -32,3 +32,6 @@ void Server::start()
         close(client);
     }
 }
+void Server::shutdown(){
+    
+}

@@ -13,10 +13,10 @@ class Server {
 public:
     explicit Server() noexcept (true);
     void start();
+    void shutdown ();
     ~Server();
     Server(const Server &) = delete;
     Server &operator =(const Server &) = delete;
-
 
 private:
     Socket socket;
