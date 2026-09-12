@@ -4,15 +4,17 @@
 #include <netdb.h>
 #include <memory>
 #include <cstring>
-class Socket {
+#include <print>
+class Socket
+{
 public:
-    explicit Socket() noexcept;
-    void start() noexcept;
+    explicit Socket() noexcept(true);
+    void start();
     ~Socket() noexcept;
+
 private:
     int status;
+    int socketFileDescriptor;
     struct addrinfo hint;
     struct addrinfo *servInfo;
 };
-
-

@@ -10,7 +10,7 @@
 
 class Server {
 public:
-    explicit Server() noexcept;
+    explicit Server() noexcept (true);
 
     ~Server();
 
@@ -20,8 +20,5 @@ public:
     void start();
 
 private:
-    int listeningPort;
-    int listeningSocketFd;
-    addrinfo* addressList;
-    void setupListeningSocket();
+    Socket socket;
 };
