@@ -10,6 +10,7 @@ class Socket
 public:
     explicit Socket() noexcept(true);
     void start();
+    [[nodiscard]] int acceptConnection ();
     ~Socket() noexcept;
 
 private:

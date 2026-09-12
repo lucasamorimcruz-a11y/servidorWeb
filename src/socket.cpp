@@ -4,7 +4,7 @@
 Socket::Socket() noexcept(true)
 {
     this->status = 0;
-    this->socketFileDescriptor = -1; 
+    this->socketFileDescriptor = -1;
     this->servInfo = nullptr;
     std::memset(&this->hint, 0, sizeof(this->hint));
     this->hint.ai_family = AF_UNSPEC;
@@ -34,7 +34,6 @@ void Socket::start()
         close(this->socketFileDescriptor);
         this->socketFileDescriptor = -1;
         freeaddrinfo(this->servInfo);
-        this->servInfo = nullptr;
         return;
     }
     freeaddrinfo(this->servInfo);
@@ -47,6 +46,14 @@ void Socket::start()
         freeaddrinfo(this->servInfo);
         return;
     }
+}
+int Socket::acceptConnection()
+{
+    sockaddr_storage theirAddress;
+    socklen_t addressSize;
+    addressSize = sizeof(theirAddress);
+    int clientFileDescriptor = accept(this->socketFileDescriptor, (sockaddr *)&theirAddress, &addressSize);
+    return clientFileDescriptor;
 }
 Socket::~Socket() noexcept(true)
 {
